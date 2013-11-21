@@ -30,6 +30,10 @@ Ext.application({
         'Main', 'MapOverview'
     ],
 
+	controllers: [
+		'mapController'
+	],
+
     icon: {
         '57': 'resources/icons/Icon.png',
         '72': 'resources/icons/Icon~ipad.png',
@@ -53,6 +57,7 @@ Ext.application({
         Ext.fly('appLoadingIndicator').destroy();
 
         // Initialize the main view
+        // Ext.widget("mapoverview");
         Ext.Viewport.add(Ext.create('LocationSharing.view.Main'));
     },
 

@@ -29,23 +29,6 @@ Ext.define('LocationSharing.view.MapOverview', {
         ],*/
 
         listeners: {
-            maprender: function(comp, map) {
-                //debugger;
-                var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(37.44885, -122.158592),
-                    title : 'Sencha HQ',
-                    map: map
-                });
-
-                google.maps.event.addListener(marker, 'click', function() {
-                    infowindow.open(map, marker);
-                });
-
-                setTimeout(function() {
-                    map.panTo(new google.maps.LatLng(37.44885, -122.158592));
-                }, 1000);
-            }
-
         }
     }
 });
