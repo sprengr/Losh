@@ -26,7 +26,7 @@ app.post('/login', function(req, res){
 app.post('/locations', function(req, res){
 	if (!authentication.loggedIn(req.session)){
 	    res.send(403);
-        return;	
+        return;
     }
 
 	var latitude  = req.body.latitude,
@@ -35,8 +35,10 @@ app.post('/locations', function(req, res){
 });
 
 app.get('/locations', function(req, res){
-	if (!authentication.isLoggedIn(req.session))
-		return;
+	if (!authentication.loggedIn(req.session)){
+	    res.send(403);
+        return;
+    }
 
 	var data = locations.getLocations();
 	res.write(JSON.stringify(data));
