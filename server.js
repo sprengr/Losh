@@ -1,8 +1,8 @@
 var express = require('express');
 var app = express();
 
-var authentication = require('./authentication');
-var locations = require('./locations');
+//var authentication = require('./authentication');
+//var locations = require('./locations');
 
 app.use(express.bodyParser());
 app.use(express.cookieParser());
@@ -15,7 +15,7 @@ app.get('/', function(req, res){
 	res.end(body);
 });
 
-app.post('/login', function(req, res){
+/*app.post('/login', function(req, res){
 	var user = req.body.user,
 		password = req.body.password;
 	authentication.login(req.session, user, password);
@@ -37,6 +37,6 @@ app.get('/locations', function(req, res){
 	var data = locations.getLocations();
 	res.write(JSON.stringify(data));
 });
-
+*/
 app.listen(8099);
 console.log('listening on port 8099');
