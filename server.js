@@ -1,4 +1,11 @@
-var express = require('express');
+var http = require('http')
+var port = process.env.PORT || 1337;
+http.createServer(function(req, res) {
+  res.writeHead(200, { 'Content-Type': 'text/plain' });
+  res.end('Hello World\n');
+}).listen(port)
+
+/*var express = require('express');
 var app = express();
 
 //var authentication = require('./authentication');
@@ -15,7 +22,7 @@ app.get('/', function(req, res){
 	res.end(body);
 });
 
-/*app.post('/login', function(req, res){
+app.post('/login', function(req, res){
 	var user = req.body.user,
 		password = req.body.password;
 	authentication.login(req.session, user, password);
@@ -37,6 +44,6 @@ app.get('/locations', function(req, res){
 	var data = locations.getLocations();
 	res.write(JSON.stringify(data));
 });
-*/
+
 app.listen(8099);
-console.log('listening on port 8099');
+console.log('listening on port 8099');*/
