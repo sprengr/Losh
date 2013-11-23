@@ -24,7 +24,7 @@ app.post('/login', function(req, res){
 });
 
 app.post('/locations', function(req, res){
-	if (!authentication.loggedIn(req.session)){
+	if (!authentication.isLoggedIn(req.session)){
 	    res.send(403);
         return;
     }
@@ -35,7 +35,7 @@ app.post('/locations', function(req, res){
 });
 
 app.get('/locations', function(req, res){
-	if (!authentication.loggedIn(req.session)){
+	if (!authentication.isLoggedIn(req.session)){
 	    res.send(403);
         return;
     }
