@@ -11,7 +11,7 @@ app.use(express.cookieParser());
 app.use(express.session({secret: 'ec52b70f-7235-4358-a8f2-9065e5344cbb'}));
 
 app.get('/', function(req, res){
-	var body = 'Hello World';
+	var body = 'Hello World express';
 	res.setHeader('Content-Type', 'text/plain');
 	res.setHeader('Content-Length', body.length);
 	res.end(body);
