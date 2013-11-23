@@ -1,6 +1,9 @@
 var express = require('express');
 var app = express();
 
+var authentication = require('./authentication');
+var locations = require('./locations');
+
 var http = require('http')
 var port = process.env.PORT || 1337;
 http.createServer(function(req, res) {
