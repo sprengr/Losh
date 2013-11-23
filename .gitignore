@@ -1,0 +1,8 @@
+node_modules/*
+*.pubxml
+*.pubxml.user
+*.njsproj
+*.sln
+*.v12.suo
+bin/*
+obj/*
