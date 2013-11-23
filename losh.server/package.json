@@ -3,8 +3,9 @@
   "description": "Location Sharing",
   "version": "0.0.1",
   "private": true,
+  "main": "app.js",
   "dependencies": {
-    "express": "3.x",
-    "underscore": "1.5.x"
+    "express": "~3.4.4",
+    "underscore": "~1.5.2"
   }
 }

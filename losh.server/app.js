@@ -31,7 +31,7 @@ app.post('/locations', function(req, res){
 });
 
 app.get('/locations', function(req, res){
-	if (!authentication.loggedIn(req.session))
+	if (!authentication.isLoggedIn(req.session))
 		return;
 
 	var data = locations.getLocations();
