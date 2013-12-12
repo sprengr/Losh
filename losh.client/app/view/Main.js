@@ -11,6 +11,18 @@ Ext.define('LocationSharing.view.Main', {
 
         items: [
             {
+                title: 'Upload',
+                iconCls: 'maps',
+                layout: 'fit',
+                items: 
+                [
+                    {
+                          xtype : 'mapoverview'
+                    }
+                ]
+                
+            },
+            {
                 title: 'Map',
                 iconCls: 'maps',
                 layout: 'fit',
@@ -23,21 +35,30 @@ Ext.define('LocationSharing.view.Main', {
                 
             },
             {
-                title: 'Welcome',
+                title: 'History',
+                iconCls: 'maps',
+                layout: 'fit',
+                items: 
+                [
+                    {
+                          xtype : 'mapoverview'
+                    }
+                ]
+                
+            },
+            {
+                title: 'Login',
                 iconCls: 'home',
 
                 styleHtmlContent: true,
                 scrollable: true,
 
-                items: {
-                    docked: 'top',
-                    xtype: 'titlebar',
-                    title: 'Welcome to Sencha Touch 2'
-                },
+                items: [
+                    {
+                          xtype : 'login'
+                    }
+                ]
 
-                html: [
-					"fuu fuuuu uuuuu"
-                ].join("")
             }
         ]
     }

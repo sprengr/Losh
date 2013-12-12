@@ -5,7 +5,7 @@ Ext.define('LocationSharing.view.MapOverview', {
     //useCurrentLocation: Ext.util.Geolocation, //same var geo with geolocation object
     config: {
         mapOptions : {
-            center : new google.maps.LatLng(37.381592, -122.135672),  //nearby San Fran
+            center : new google.maps.LatLng(51.381592, 0),
             zoom : 12,
             mapTypeId : google.maps.MapTypeId.ROADMAP,
             navigationControl: true,

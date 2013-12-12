@@ -12,6 +12,6 @@ Ext.define('LocationSharing.controller.mainController', {
     
     //called when the Application is launched, remove if not needed
     launch: function(app) {
-        
+        //TODO check if loged in
     }
 });

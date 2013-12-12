@@ -31,7 +31,7 @@ Ext.application({
     ],
 
     views: [
-        'Main', 'MapOverview'
+        'Main', 'MapOverview', 'Login'
     ],
 
 	controllers: [
