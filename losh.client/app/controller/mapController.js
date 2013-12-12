@@ -20,7 +20,7 @@ Ext.define('LocationSharing.controller.mapController', {
 	        allowHighAccuracy: true,
 	        listeners: {
 	            locationupdate: function(geo) {
-					console.debug(arguments);
+					//console.debug(arguments);
 	            	// debugger;
 	                lat = geo.getLatitude();
 	                lon = geo.getLongitude();
@@ -29,7 +29,7 @@ Ext.define('LocationSharing.controller.mapController', {
 					currentMap.panTo(coord);
 			        var marker = new google.maps.Marker({
 			            position: new google.maps.LatLng(geo.getLatitude(), geo.getLongitude()),
-			            title : 'Sencha HQ',
+			            title : 'My Position	',
 			            map: currentMap
 			        });
 
