@@ -20,18 +20,21 @@ Ext.define('LocationSharing.controller.mapController', {
 	        allowHighAccuracy: true,
 	        listeners: {
 	            locationupdate: function(geo) {
+					console.debug(arguments);
 	            	// debugger;
-	                var lat = geo.getLatitude();
-	                var lon = geo.getLongitude();
+	                lat = geo.getLatitude();
+	                lon = geo.getLongitude();
 	                var coord = new google.maps.LatLng(lat, lon);
-					comp.getMap().panTo(coord);
+					var currentMap = comp.getMap();
+					currentMap.panTo(coord);
 			        var marker = new google.maps.Marker({
 			            position: new google.maps.LatLng(geo.getLatitude(), geo.getLongitude()),
 			            title : 'Sencha HQ',
-			            map: map
+			            map: currentMap
 			        });
 
 			        google.maps.event.addListener(marker, 'click', function() {
+						console.debug(arguments);
 			            infowindow.open(map, marker);
 			        });
 			        // setTimeout(function() {

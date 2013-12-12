@@ -12,7 +12,7 @@ Ext.define('LocationSharing.view.Main', {
         items: [
             {
                 title: 'Map',
-                iconCls: 'action',
+                iconCls: 'maps',
                 layout: 'fit',
                 items: 
                 [

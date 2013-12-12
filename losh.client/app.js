@@ -21,6 +21,10 @@ Ext.Loader.setPath({
 
 Ext.application({
     name: 'LocationSharing',
+	
+	//latitude and longitude
+	lat: 0,
+	lon: 0,
 
     requires: [
         'Ext.MessageBox', 'Ext.Map'
