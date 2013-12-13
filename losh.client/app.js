@@ -31,12 +31,16 @@ Ext.application({
     ],
 
     views: [
-        'Main', 'MapOverview', 'Login'
+        'Main', 'MapOverview', 'Login', 'Upload'
     ],
 
 	controllers: [
-		'mapController'
+		'mapController', 'mainController'
 	],
+
+    models: [
+        'markerModel', 'userModel'
+    ],
 
     icon: {
         '57': 'resources/icons/Icon.png',

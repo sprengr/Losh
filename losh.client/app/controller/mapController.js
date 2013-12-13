@@ -29,9 +29,17 @@ Ext.define('LocationSharing.controller.mapController', {
 					currentMap.panTo(coord);
 			        var marker = new google.maps.Marker({
 			            position: new google.maps.LatLng(geo.getLatitude(), geo.getLongitude()),
-			            title : 'My Position	',
+			            title : 'My Position',
 			            map: currentMap
 			        });
+
+			        //update location in localstorage
+			        var markerModel = Ext.create('LocationSharing.model.markerModel', {
+			        	latitude: geo.getLatitude(),
+			        	longitude: geo.getLongitude(),
+			        	id: 'current'
+			        });
+			        markerModel.save();
 
 			        google.maps.event.addListener(marker, 'click', function() {
 						console.debug(arguments);

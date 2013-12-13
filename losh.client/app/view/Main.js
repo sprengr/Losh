@@ -11,18 +11,6 @@ Ext.define('LocationSharing.view.Main', {
 
         items: [
             {
-                title: 'Upload',
-                iconCls: 'maps',
-                layout: 'fit',
-                items: 
-                [
-                    {
-                          xtype : 'mapoverview'
-                    }
-                ]
-                
-            },
-            {
                 title: 'Map',
                 iconCls: 'maps',
                 layout: 'fit',
@@ -59,7 +47,21 @@ Ext.define('LocationSharing.view.Main', {
                     }
                 ]
 
-            }
+            },
+            {
+                title: 'Upload',
+                iconCls: 'arrow_up',  
+                layout: 'fit',
+                styleHtmlContent: true,
+                items:
+                [
+                    {
+                        xtype: 'button',
+                        text: 'Upload',
+                        id: 'uploadButton'
+                    }
+                ]    
+            },
         ]
     }
 });

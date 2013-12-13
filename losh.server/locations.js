@@ -5,7 +5,7 @@ var locations = (function(){
 
 	self.addLocation = function(longitude, latitude){
 		console.log('adding location');
-		self.data.add({longitude: longitude, latitude: latitude})
+		self.data.push({longitude: longitude, latitude: latitude})
 	};
 
 	self.getLocations = function(){
@@ -22,8 +22,11 @@ var locations = (function(){
 }());
 
 module.exports = {
-	addLocation : function(){
-		locations.addLocation();
+	addLocation : function(longitude, latitude){
+		locations.addLocation(longitude, latitude);
+	},
+	getLocations : function(){
+		return locations.getLocations();
 	},
 	printLocations : function(){
 		locations.printLocations();
