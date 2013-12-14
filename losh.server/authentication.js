@@ -10,6 +10,10 @@ var authentication = (function(){
 			return u.user === user && u.password === password;
 		}).length > 0;
 		session.isLoggedIn = validLogin;
+
+		if (session.isLoggedIn){
+			console.log(user + ' logged in');
+		}
 	};
 
 	self.isLoggedIn = function(session){

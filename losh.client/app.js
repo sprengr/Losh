@@ -30,16 +30,20 @@ Ext.application({
         'Ext.MessageBox', 'Ext.Map'
     ],
 
+    models: [
+        'markerModel', 'userModel'
+    ],
+
     views: [
-        'Main', 'MapOverview', 'Login', 'Upload'
+        'Main', 'MapOverview', 'Login', 'Upload', 'History'
     ],
 
 	controllers: [
-		'mapController', 'mainController'
+		'mapController', 'mainController', 'historyController'
 	],
 
-    models: [
-        'markerModel', 'userModel'
+    stores: [
+        'markerStore', 'markerStoreLocal'
     ],
 
     icon: {

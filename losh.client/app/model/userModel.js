@@ -3,10 +3,11 @@ Ext.define('LocationSharing.model.userModel', {
     config: {
         fields: [
             { name: 'name', type: 'string' },
-            { name: 'password', type: 'string' }
+            //{ name: 'password', type: 'string' }
+            { name: 'isLoggedIn', type: 'boolean'}
         ],
         proxy: {
-        	type: 'memory',
+        	type: 'localstorage',
         	reader: {
         		type: 'json',
         		root: 'currentUser'

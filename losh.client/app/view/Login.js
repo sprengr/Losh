@@ -26,14 +26,14 @@ Ext.define('LocationSharing.view.Login', {
                             {
                                 xtype: 'textfield',
                                 placeHolder: 'Username',
-                                itemId: 'userNameTextField',
+                                id: 'userNameTextField',
                                 name: 'userNameTextField',
                                 required: true
                             },
                             {
                                 xtype: 'passwordfield',
                                 placeHolder: 'Password',
-                                itemId: 'passwordTextField',
+                                id: 'passwordTextField',
                                 name: 'passwordTextField',
                                 required: true
                             }
@@ -41,7 +41,7 @@ Ext.define('LocationSharing.view.Login', {
                     },
                     {
                         xtype: 'button',
-                        itemId: 'logInButton',
+                        id: 'logInButton',
                         ui: 'action',
                         padding: '10px',
                         text: 'Log In'

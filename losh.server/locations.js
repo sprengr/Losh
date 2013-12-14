@@ -3,12 +3,13 @@ var locations = (function(){
 
 	self.data = [];
 
-	self.addLocation = function(longitude, latitude){
+	self.addLocation = function(longitude, latitude, street){
 		console.log('adding location');
-		self.data.push({longitude: longitude, latitude: latitude})
+		self.data.push({longitude: longitude, latitude: latitude, street: street})
 	};
 
 	self.getLocations = function(){
+		console.log('getting ' + self.data.length + 'locations');
 		return self.data;
 	};
 
@@ -22,8 +23,8 @@ var locations = (function(){
 }());
 
 module.exports = {
-	addLocation : function(longitude, latitude){
-		locations.addLocation(longitude, latitude);
+	addLocation : function(longitude, latitude, street){
+		locations.addLocation(longitude, latitude, street);
 	},
 	getLocations : function(){
 		return locations.getLocations();

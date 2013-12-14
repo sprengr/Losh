@@ -3,7 +3,9 @@ Ext.define('LocationSharing.model.markerModel', {
     config: {
         fields: [
             { name: 'latitude', type: 'float' },
-            { name: 'longitude', type: 'float' }
+            { name: 'longitude', type: 'float' },
+            { name: 'visible', type: 'boolean' },
+            { name: 'street', type: 'string' }
         ],
         proxy: {
         	type: 'localstorage',

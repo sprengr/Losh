@@ -1,9 +1,9 @@
 Ext.define('LocationSharing.view.Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'main',
+    id: 'mainTabPanel',
     requires: [
-        'Ext.TitleBar',
-        'Ext.Video'
+        'Ext.TitleBar'
     ],
     config: {
         tabBarPosition: 'bottom',
@@ -11,6 +11,7 @@ Ext.define('LocationSharing.view.Main', {
 
         items: [
             {
+                id: 'mapTab',
                 title: 'Map',
                 iconCls: 'maps',
                 layout: 'fit',
@@ -23,42 +24,40 @@ Ext.define('LocationSharing.view.Main', {
                 
             },
             {
+                id: 'historyTab',
+                needsLogin: true,
                 title: 'History',
                 iconCls: 'maps',
-                layout: 'fit',
+                layout: 'card',
+                styleHtmlContent: true,
                 items: 
                 [
+                    {  
+                       xtype : 'login',
+                       needsLogin: false
+                    },
                     {
-                          xtype : 'mapoverview'
+                       xtype : 'history',
+                       needsLogin: true
                     }
                 ]
-                
             },
             {
-                title: 'Login',
-                iconCls: 'home',
-                layout: 'fit',
-                styleHtmlContent: true,
-                scrollable: true,
-
-                items: [
-                    {
-                          xtype : 'login'
-                    }
-                ]
-
-            },
-            {
+                id: 'uploadTab',
+                needsLogin: true,
                 title: 'Upload',
                 iconCls: 'arrow_up',  
-                layout: 'fit',
+                layout: 'card',
                 styleHtmlContent: true,
                 items:
                 [
                     {
-                        xtype: 'button',
-                        text: 'Upload',
-                        id: 'uploadButton'
+                        xtype : 'login',
+                        needsLogin: false
+                    },
+                    {
+                        xtype: 'upload',
+                        needsLogin: true
                     }
                 ]    
             },

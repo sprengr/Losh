@@ -25,15 +25,20 @@ app.post('/login', function(req, res){
 	var user = req.body.user,
 		password = req.body.password;
 	authentication.login(req.session, user, password);
+
+	res.write(JSON.stringify(req.session.isLoggedIn));
+	res.end();
 });
 
 app.post('/locations', function(req, res){
-	//if (!authentication.loggedIn(req.session))
+	//if (!authentication.isLoggedIn(req.session))
 	//	return;
 
 	var latitude  = req.body.latitude,
-	    longitude = req.body.longitude;
-	locations.addLocation(latitude, longitude);
+	    longitude = req.body.longitude,
+	    street = req.body.street;
+	locations.addLocation(latitude, longitude, street);
+	res.end();
 });
 
 app.get('/locations', function(req, res){
