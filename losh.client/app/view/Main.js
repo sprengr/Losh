@@ -37,7 +37,7 @@ Ext.define('LocationSharing.view.Main', {
             {
                 title: 'Login',
                 iconCls: 'home',
-
+                layout: 'fit',
                 styleHtmlContent: true,
                 scrollable: true,
 

@@ -1,4 +1,4 @@
-Ext.define('User', {
+Ext.define('LocationSharing.model.userModel', {
     extend: 'Ext.data.Model',
     config: {
         fields: [
