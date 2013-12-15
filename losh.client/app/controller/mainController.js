@@ -1,6 +1,9 @@
 Ext.define('LocationSharing.controller.mainController', {
     extend: 'Ext.app.Controller',
-    
+    requires: [
+        'LocationSharing.config.Config'
+    ],
+
     config: {
         refs: {
             uploadButton: '#uploadButton',
@@ -48,10 +51,9 @@ Ext.define('LocationSharing.controller.mainController', {
             password = Ext.getCmp('passwordTextField').getValue();
 
         var buttonParent = button.up();
-
         Ext.Ajax.request(
         {
-           url: 'http://localhost:8099/login',
+           url: LocationSharing.config.Config.getLoginUrlPost(),
            method: 'POST',  
            params: {
                 user: user,
@@ -82,16 +84,17 @@ Ext.define('LocationSharing.controller.mainController', {
           success: function(marker){
             Ext.Ajax.request(
             {
-               url: 'http://localhost:8099/locations',
+               url: LocationSharing.config.Config.getLocationsUrlPost(),
                method: 'POST',  
                params: marker.data,
                success: function(response, opts) {
-                  var markerStoreLocalStorage = Ext.getStore('markerStoreLocalStorage');
-                  markerStoreLocalStorage.add({
+                  var markerModel = Ext.create('LocationSharing.model.markerModel', {
                         longitude: marker.data.longitude,
                         latitude: marker.data.latitude,
                         street: marker.data.street,
-                        visible: false});
+                        visible: false,
+                        type: 'history'});
+                  markerModel.save();
                },
                failure: function(response, opts) {
                   console.log('server-side failure with status code ' + response.status);

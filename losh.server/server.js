@@ -50,5 +50,5 @@ app.get('/locations', function(req, res){
 	res.end();
 });
 
-app.listen(8099);
+app.listen(process.env.PORT || 8099);
 console.log('listening on port 8099');

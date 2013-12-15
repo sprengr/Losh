@@ -1,3 +1,14 @@
 losh.server/node_modules
+
 losh.client/.sencha
+
+losh.client/resources/sass/.sass-cache
 *.db
+
+*.pubxml
+*.pubxml.user
+*.njsproj
+*.sln
+*.v12.suo
+bin/*
+obj/*

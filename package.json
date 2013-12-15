@@ -1,0 +1,10 @@
+{
+  "name": "Losh",
+  "description": "Location Sharing",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "express": "~3.4.4",
+    "underscore": "~1.5.2"
+  }
+}

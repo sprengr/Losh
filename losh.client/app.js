@@ -27,7 +27,11 @@ Ext.application({
 	lon: 0,
 
     requires: [
-        'Ext.MessageBox', 'Ext.Map'
+        'Ext.MessageBox', 'Ext.Map', 'LocationSharing.config.Config'
+    ],
+
+    configs: [
+        'Config'
     ],
 
     models: [

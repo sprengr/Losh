@@ -5,7 +5,9 @@ Ext.define('LocationSharing.model.markerModel', {
             { name: 'latitude', type: 'float' },
             { name: 'longitude', type: 'float' },
             { name: 'visible', type: 'boolean' },
-            { name: 'street', type: 'string' }
+            { name: 'street', type: 'string' },
+            { name: 'googleMarker'},
+            { name: 'type', type: 'string'}
         ],
         proxy: {
         	type: 'localstorage',

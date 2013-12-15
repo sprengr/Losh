@@ -4,7 +4,7 @@ Ext.define('LocationSharing.view.History', {
     id: 'historyList',
     config: {
         title: 'History',
-        itemTpl: '{street} ({latitude} {longitude})',
+        itemTpl: '<h3>{street}</h3>({latitude} {longitude})',
        store: 'LocationSharing.store.markerStore'
     }
     
