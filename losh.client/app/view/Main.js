@@ -24,25 +24,6 @@ Ext.define('LocationSharing.view.Main', {
                 
             },
             {
-                id: 'historyTab',
-                needsLogin: true,
-                title: 'History',
-                iconCls: 'maps',
-                layout: 'card',
-                styleHtmlContent: true,
-                items: 
-                [
-                    {  
-                       xtype : 'login',
-                       needsLogin: false
-                    },
-                    {
-                       xtype : 'history',
-                       needsLogin: true
-                    }
-                ]
-            },
-            {
                 id: 'uploadTab',
                 needsLogin: true,
                 title: 'Upload',
@@ -61,6 +42,25 @@ Ext.define('LocationSharing.view.Main', {
                     }
                 ]    
             },
+            {
+                id: 'historyTab',
+                needsLogin: true,
+                title: 'History',
+                iconCls: 'list',
+                layout: 'card',
+                styleHtmlContent: true,
+                items: 
+                [
+                    {  
+                       xtype : 'login',
+                       needsLogin: false
+                    },
+                    {
+                       xtype : 'history',
+                       needsLogin: true
+                    }
+                ]
+            }
         ]
     }
 });

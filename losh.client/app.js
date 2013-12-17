@@ -27,7 +27,8 @@ Ext.application({
 	lon: 0,
 
     requires: [
-        'Ext.MessageBox', 'Ext.Map', 'LocationSharing.config.Config'
+        'Ext.MessageBox', 'Ext.Map', 'LocationSharing.config.Config',
+        'LocationSharing.controller.historyController'
     ],
 
     configs: [
@@ -43,7 +44,7 @@ Ext.application({
     ],
 
 	controllers: [
-		'mapController', 'mainController', 'historyController'
+		'mapController', 'historyController', 'mainController'
 	],
 
     stores: [

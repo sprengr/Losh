@@ -8,7 +8,8 @@ Ext.define('LocationSharing.controller.mainController', {
         refs: {
             uploadButton: '#uploadButton',
             logInButton: '#logInButton',
-            uploadTab: '#uploadTab'
+            uploadTab: '#uploadTab',
+            userNameTextField: '#userNameTextField'
         },
         control: {
             logInButton: {
@@ -28,6 +29,9 @@ Ext.define('LocationSharing.controller.mainController', {
 
     mainTabChange: function(tabPanel, tab, oldTab){
         this.checkLogin(tab);
+
+        if(tab.id==='historyTab')
+            this.getApplication().getController('historyController').loadMarkers();
     },
 
     checkLogin: function(tab){
@@ -49,8 +53,10 @@ Ext.define('LocationSharing.controller.mainController', {
     login: function(button){
         var user = Ext.getCmp('userNameTextField').getValue(),
             password = Ext.getCmp('passwordTextField').getValue();
-
         var buttonParent = button.up();
+
+        Ext.getCmp('uploadUserNameTextField').setValue(user);
+
         Ext.Ajax.request(
         {
            url: LocationSharing.config.Config.getLoginUrlPost(),
@@ -69,7 +75,6 @@ Ext.define('LocationSharing.controller.mainController', {
                 id: 'currentUser'
               });
               userModel.save();
-
               Ext.getCmp('mainTabPanel').getActiveItem().animateActiveItem(1, {type: 'slide', direction: 'down'});
            },
            failure: function(response, opts) {

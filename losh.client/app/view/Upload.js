@@ -27,10 +27,10 @@ Ext.define('LocationSharing.view.Upload', {
                             {
                                 xtype: 'textfield',
                                 //placeHolder: 'Username',
-                                itemId: 'userNameTextField',
-                                name: 'userNameTextField',
+                                id: 'uploadUserNameTextField',
+                                name: 'uploadUserNameTextField',
                                 disabled: true,
-                                value: 'meeee'
+                                value: 'admin'
                                 //required: true
                             }
                         ]

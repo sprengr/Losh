@@ -1,6 +1,7 @@
 Ext.define('LocationSharing.controller.historyController', {
     extend: 'Ext.app.Controller',
     config: {
+        id: 'historyController',
         refs: {historyList:'#historyList'},
         control: {
             history : {
@@ -10,10 +11,11 @@ Ext.define('LocationSharing.controller.historyController', {
             }
         }
     },
+
     loadMarkers: function() {
         var markerStoreLocalStorage = Ext.getStore('markerStoreLocalStorage');
-
-        if ((markerStoreLocalStorage.getCount()) <= 1) {
+        var self = this;
+        //if ((markerStoreLocalStorage.getCount()) <= 1) {
             Ext.Ajax.request(
             {
                url: LocationSharing.config.Config.getLocationsUrlGet(),
@@ -22,6 +24,8 @@ Ext.define('LocationSharing.controller.historyController', {
                   var obj = Ext.decode(response.responseText);
                   console.log('Loaded locations');
                   
+                  markerStoreLocalStorage.removeAll();
+
                   var responseJson = JSON.parse(response.responseText);
                   for (var i = 0; i < responseJson.length; i++) {
                     markerStoreLocalStorage.add({
@@ -32,15 +36,14 @@ Ext.define('LocationSharing.controller.historyController', {
                         type: 'history'});
                   };
                   markerStoreLocalStorage.sync();
+                  markerStoreLocalStorage.filter('type', 'history');
+                  self.getHistoryList().setStore(markerStoreLocalStorage);
                },
                failure: function(response, opts) {
                   console.log('server-side failure with status code ' + response.status);
                }
             });
-        }
-        
-        markerStoreLocalStorage.filter('type', 'history');
-        this.getHistoryList().setStore(markerStoreLocalStorage);
+        //}
     },
 
     itemtap: function(list, index, target, record) {

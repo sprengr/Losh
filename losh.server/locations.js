@@ -19,6 +19,10 @@ var locations = (function(){
 		};
 	};
 
+	self.clear = function(){
+		self.data = [];
+	}
+
 	return self;
 }());
 
@@ -31,5 +35,8 @@ module.exports = {
 	},
 	printLocations : function(){
 		locations.printLocations();
+	},
+	clear: function(){
+		locations.clear();
 	}
 };

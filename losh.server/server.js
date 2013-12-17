@@ -21,6 +21,10 @@ app.get('/', function(req, res){
 	res.end(body);
 });
 
+app.get('/clear', function(req, res){
+
+	res.end('cleared locations');
+});
 app.post('/login', function(req, res){
 	var user = req.body.user,
 		password = req.body.password;
@@ -37,7 +41,7 @@ app.post('/locations', function(req, res){
 	var latitude  = req.body.latitude,
 	    longitude = req.body.longitude,
 	    street = req.body.street;
-	locations.addLocation(latitude, longitude, street);
+	locations.addLocation(longitude, latitude, street);
 	res.end();
 });
 
