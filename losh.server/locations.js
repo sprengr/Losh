@@ -4,12 +4,18 @@ var locations = (function(){
 	self.data = [];
 
 	self.addLocation = function(longitude, latitude, street){
-		console.log('adding location');
-		self.data.push({longitude: longitude, latitude: latitude, street: street})
+		console.log('adding location of');
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1; //January is 0!
+		var yyyy = today.getFullYear();
+
+		var date = dd + '.' + mm + '.' + yyyy + ' - ' + today.getHours() + ':' + today.getMinutes();
+		self.data.push({longitude: longitude, latitude: latitude, street: street, date: date})
 	};
 
 	self.getLocations = function(){
-		console.log('getting ' + self.data.length + 'locations');
+		console.log('getting ' + self.data.length + ' locations');
 		return self.data;
 	};
 

@@ -31,6 +31,7 @@ Ext.define('LocationSharing.controller.historyController', {
                     markerStoreLocalStorage.add({
                         longitude: responseJson[i].longitude,
                         latitude: responseJson[i].latitude,
+                        date: responseJson[i].date,
                         street: responseJson[i].street,
                         visible: false,
                         type: 'history'});
