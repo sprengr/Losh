@@ -32,6 +32,7 @@ Ext.define('LocationSharing.controller.historyController', {
                         longitude: responseJson[i].longitude,
                         latitude: responseJson[i].latitude,
                         date: responseJson[i].date,
+                        user: responseJson[i].name,
                         street: responseJson[i].street,
                         visible: false,
                         type: 'history'});

@@ -85,13 +85,23 @@ Ext.define('LocationSharing.controller.mainController', {
 
     upload: function(){
         var markerModel = Ext.ModelMgr.getModel('LocationSharing.model.markerModel');
+            	
+        var userModel = Ext.ModelMgr.getModel('LocationSharing.model.userModel');
+        var userName;
+        userModel.load('currentUser', {
+          success: function(user){
+          	userName = user.data.name;
+          }
+        });
+
         markerModel.load('currentMarker', {
           success: function(marker){
             Ext.Ajax.request(
             {
+            	
                url: LocationSharing.config.Config.getLocationsUrlPost(),
                method: 'POST',  
-               params: marker.data,
+               params: {user: userName, latitude : marker.data.latitude, longitude: marker.data.longitude, street: marker.data.street},
                success: function(response, opts) {
                   var markerModel = Ext.create('LocationSharing.model.markerModel', {
                         longitude: marker.data.longitude,
@@ -106,7 +116,7 @@ Ext.define('LocationSharing.controller.mainController', {
                }
             });
           }
-        })
+        });
         
     }
 });

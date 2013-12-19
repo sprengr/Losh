@@ -40,8 +40,9 @@ app.post('/locations', function(req, res){
 
 	var latitude  = req.body.latitude,
 	    longitude = req.body.longitude,
-	    street = req.body.street;
-	locations.addLocation(longitude, latitude, street);
+	    street = req.body.street,
+	    name = req.body.user;
+	locations.addLocation(longitude, latitude, street, name);
 	res.end();
 });
 

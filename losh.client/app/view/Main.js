@@ -44,20 +44,16 @@ Ext.define('LocationSharing.view.Main', {
             },
             {
                 id: 'historyTab',
-                needsLogin: true,
+                needsLogin: false,
                 title: 'History',
                 iconCls: 'list',
                 layout: 'card',
                 styleHtmlContent: true,
                 items: 
                 [
-                    {  
-                       xtype : 'login',
-                       needsLogin: false
-                    },
                     {
                        xtype : 'history',
-                       needsLogin: true
+                       needsLogin: false
                     }
                 ]
             }
